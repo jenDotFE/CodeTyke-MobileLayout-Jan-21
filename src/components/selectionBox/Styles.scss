@@ -1,16 +1,35 @@
 @import '../../styles/utils/colors';
+@import '../../styles/utils/breakpoints';
 
 .selectionBox{
-    position: relative;
-    width: 160px;
-    overflow: hidden;
-    padding: 8px 8px 20px 8px;
-    background-color: white;
-    display: inline-block;
-    border: solid 1px $elephant-paw;
-    border-radius: 5px;
-    text-align: center;
-    &__image {display: block; width: inherit; padding-bottom: 8px;  }
-    &__text {font-size: 1em; font-weight: 600;}
-    input { position: absolute; left: 4px;}
+  position: relative;
+  width: 160px;
+  overflow: hidden;
+  padding: 8px 8px 20px 8px;
+  background-color: white;
+  display: inline-block;
+  border: solid 1px $elephant-paw;
+  border-radius: 5px;
+  text-align: center;
+
+  @media screen and (max-width: $mobile) {
+    width: 125px;
   }
+
+  &__image {
+    display: block;
+    width: inherit;
+    padding-bottom: 8px;
+  }
+  &__text {
+    font-size: 1em;
+    font-weight: 600;
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+  }
+  input {
+    position: absolute;
+    left: 4px;
+  }
+}
