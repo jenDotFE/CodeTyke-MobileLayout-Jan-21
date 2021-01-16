@@ -12,6 +12,11 @@
         color: $morning-sky;
         font-weight: 600;
         font-size: 1.5em;
+        
+        // Mobile size or less: Align the title to the left  
+        @media screen and (max-width: $mobile) {
+            text-align: left;
+        }
     }
 
     &__subHeader{
@@ -29,6 +34,10 @@
         @media only screen and (max-width: $tablet) {
             border-radius: unset;
         }
+        @media screen and (max-width: $mobile) {
+            background-color: none;
+            box-shadow: none;
+          }
 
     }
 
@@ -37,12 +46,23 @@
         display: grid;
         grid-auto-flow: column;
         grid-gap: 10px;
+
+        // Tablet size or less: Answers are arranged in a grid of 2x2 elements
+        @media screen and (max-width: $tablet) {
+            grid-auto-flow: row;
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__submitButtonContainer {
         height: 50px;
         .submitButton {
             float: right;
+
+        // Mobile size or less: Button for answer submission is full-width
+        @media screen and (max-width: $mobile) {
+            float: none;
+        }
         }
     }
 }
