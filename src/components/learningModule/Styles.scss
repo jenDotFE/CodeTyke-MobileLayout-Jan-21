@@ -31,9 +31,13 @@
         border-radius: 10px;
         display: grid;
         justify-content: center;
+        // Tablet size or less: White container adjust size responsively
         @media only screen and (max-width: $tablet) {
+            max-width: 90%;
+            margin:auto;
             border-radius: unset;
         }
+        // Mobile size or less: White container for the answers is removed.
         @media screen and (max-width: $mobile) {
             background-color: none;
             box-shadow: none;
