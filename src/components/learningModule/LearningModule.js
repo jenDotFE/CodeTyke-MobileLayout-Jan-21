@@ -4,7 +4,7 @@ import Button from '../button/Button';
 
 import './Styles.scss';
 
-const LearningModule = ({setGameStatus}) => {
+const LearningModule = ({setGameStatus, setProgress}) => {
   const [currentQuestionId, setCurrentQuestionId] = React.useState(0);
   const [quizData, setQuizData] = React.useState({});
   let currentQuestion = quizData.questionArr ? quizData.questionArr[currentQuestionId]: {};
@@ -38,6 +38,10 @@ const LearningModule = ({setGameStatus}) => {
     })
   }
 
+// update progress status for ProgressBar Component 
+  if(quizData.totalQuestions){
+    setProgress(Math.round((currentQuestionId+1)*100/(quizData.totalQuestions+1)));
+  }
 
   return (
     <div className="learningModule">
